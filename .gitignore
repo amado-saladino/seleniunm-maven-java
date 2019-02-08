@@ -1,0 +1,10 @@
+allure-report/*
+allure-results/*
+Screenshots/*
+/.idea/
+/.settings/
+/test-output/
+/target/
+.classpath
+.project
+!.gitkeep

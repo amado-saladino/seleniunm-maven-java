@@ -1,0 +1,198 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>selenium</groupId>
+	<artifactId>taf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>taf</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.surefile.version>2.22.1</maven.surefile.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefile.version}</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${testNGfile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>regression</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>environment</name>
+					<value>regression</value>
+				</property>
+			</activation>
+			<properties>
+				<testNGfile>testng.xml</testNGfile>
+			</properties>
+
+			<!-- the commented code below also works but longer , this was taught 
+				by Rahul Shertty in REST Assured course -->
+
+			<!-- <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-compiler-plugin</artifactId> <version>3.8.0</version> <configuration> 
+				<source>1.8</source> <target>1.8</target> </configuration> </plugin> <plugin> 
+				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+				<version>${maven.surefile.version}</version> <configuration> <suiteXmlFiles> 
+				<suiteXmlFile>testng.xml</suiteXmlFile> </suiteXmlFiles> </configuration> 
+				</plugin> </plugins> </build> -->
+		</profile>
+		<profile>
+			<id>smoke</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>environment</name>
+					<value>smoke</value>
+				</property>
+			</activation>
+			<properties>
+				<testNGfile>smoke.xml</testNGfile>
+			</properties>
+			<!-- <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-compiler-plugin</artifactId> <version>3.8.0</version> <configuration> 
+				<source>1.8</source> <target>1.8</target> </configuration> </plugin> <plugin> 
+				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+				<version>${maven.surefile.version}</version> <configuration> <suiteXmlFiles> 
+				<suiteXmlFile>smoke.xml</suiteXmlFile> </suiteXmlFiles> </configuration> 
+				</plugin> </plugins> </build> -->
+		</profile>
+		<profile>
+			<id>seleniumgrid</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>environment</name>
+					<value>seleniumgrid</value>
+				</property>
+			</activation>
+			<properties>
+				<testNGfile>testngParallelTesting.xml</testNGfile>
+			</properties>
+		</profile>
+		<profile>
+			<id>cloud</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>environment</name>
+					<value>cloud</value>
+				</property>
+			</activation>
+			<properties>
+				<testNGfile>testngCloud.xml</testNGfile>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>gherkin</artifactId>
+			<version>2.12.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180813</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.codearte.jfairy</groupId>
+			<artifactId>jfairy</artifactId>
+			<version>0.5.9</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>phantomjsdriver</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+
+	</dependencies>
+</project>

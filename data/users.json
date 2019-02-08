@@ -1,0 +1,20 @@
+{
+"users": [
+    {
+      "firstname": "Ahmed",
+      "lastname": "Ahmed",
+      "password": "password4578",
+      "day": "1",
+      "month":"June",
+      "year":"1990"
+    },
+    {
+      "firstname": "Islam",
+      "lastname": "Helmy",
+      "password": "password1234",
+      "day": "18",
+      "month":"May",
+      "year":"1998"
+    }
+  ]
+ }

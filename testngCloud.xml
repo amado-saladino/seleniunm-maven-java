@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Suite" parallel="tests" thread-count="2">
+
+	<test name="Chrome Regression Test">
+		<parameter name="browser" value="chrome" />
+		<parameter name="platform" value="WIN8" />
+		<classes>			
+			<class name="tests.ContactUsTestCloud" />
+			<class name="tests.ChangeCurrencyTestCloud" />
+			<class name="tests.AddProductToWishListTestCloud" />		
+		</classes>
+	</test>
+
+	<test name="Safari Regression Test">
+		<parameter name="browser" value="safari" />
+		<parameter name="platform" value="MAC" />
+		<classes>
+			<class name="tests.SearchProductTestCloud" />
+			<class name="tests.UserRegistrationTestFakerCloud" />
+			<class name="tests.SearchProductUsingAutoSuggestTestCloud" />
+		</classes>
+	</test>
+</suite>

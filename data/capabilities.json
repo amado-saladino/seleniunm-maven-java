@@ -1,0 +1,12 @@
+{
+"options": [
+    {
+      "browser": "chrome",
+      "platform": "WIN10"
+    },
+    {
+      "browser": "safari",
+      "platform": "MAC"
+    }
+  ]
+ }

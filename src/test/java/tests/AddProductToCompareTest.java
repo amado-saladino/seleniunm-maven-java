@@ -35,7 +35,7 @@ public class AddProductToCompareTest extends TestBase
 				
 		comparePage.CompareProducts();
 		Assert.assertTrue(comparePage.firstProductName.getText().equals("Asus N551JK-XO076H Laptop"));
-		Assert.assertTrue(comparePage.secondProductName.getText().equals("Apple MacBook Pro 13-inch"));			
+		Assert.assertTrue(comparePage.secondProductName.getText().equals("Apple MacBook Pro 13-inch"));
 	}
 
 	@Test(priority=2)

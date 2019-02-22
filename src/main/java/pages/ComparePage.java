@@ -38,7 +38,7 @@ public class ComparePage extends PageBase
     {
     	clickButton(clearListLink);
     }
-    
+      
     public void CompareProducts() 
     {
     	System.out.println(allRows.size());

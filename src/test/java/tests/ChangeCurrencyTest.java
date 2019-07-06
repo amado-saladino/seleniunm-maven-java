@@ -29,9 +29,9 @@ public class ChangeCurrencyTest extends TestBase
 			searchPage.ProductSearchUsingAutoSuggest("MacB");
 			detailsPage = new ProductDetailsPage(driver); 
 			Assert.assertEquals(detailsPage.productNamebreadCrumb.getText(), productName);
-			Assert.assertTrue(detailsPage.productPricelbl.getText().contains("€"));
+			Assert.assertTrue(detailsPage.labelProductPrice.getText().contains("€"));
 			Assert.assertEquals(detailsPage.getSelectedCurrency(), "Euro");
-			System.out.println(detailsPage.productPricelbl.getText());
+			System.out.println(detailsPage.labelProductPrice.getText());
 			System.out.println(detailsPage.getSelectedCurrency());
 		} catch (Exception e) {
 			System.out.println("Error occurred  " + e.getMessage());

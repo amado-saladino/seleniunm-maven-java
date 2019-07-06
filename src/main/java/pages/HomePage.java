@@ -38,9 +38,8 @@ public class HomePage extends PageBase
 	
 	public void changeCurrency() 
 	{
-		selectComboItemByText(currencydrl, "Euro");
+		selectComboItemByText(comboChangeCurrency, "Euro");
 	}
-	
 	
 	public void selectNotebooksMenu() 
 	{

@@ -33,10 +33,25 @@ public class Helper {
 		}
 	}
 	
-	
-	public static int generateRandomNumber() {
-		
+	public static int generateRandomNumber() {		
 		return random.nextInt(5000) + 1;
+	}
+	
+	public static String generateProductKeyword(String product) {
+		int length = product.length();
+		int startIndex, endIndex;
+		String keyword;
+		
+		while (true) {
+			startIndex = random.nextInt(length -1) + 0;
+		    endIndex = random.nextInt(length -1) + 0;
+		    
+		    if (endIndex - startIndex >= 5) {
+                keyword = product.substring(startIndex, endIndex);
+                break;
+            }
+		}
+		return keyword;
 	}
 	
 }

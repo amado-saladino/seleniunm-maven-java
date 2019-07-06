@@ -20,14 +20,13 @@ public class ShoppingCartPage extends PageBase
 	public WebElement quantityTxt;
 
 	@FindBy(css = "td.subtotal")
-	public WebElement totalLbl;
-
+	public WebElement labelTotal;
 	
 	@FindBy(id="checkout")
 	WebElement checkoutBtn ; 
 	
 	@FindBy(id="termsofservice")
-	WebElement agreeCheckbox; 
+	WebElement agreeCheckbox;
 	
 	@FindBy(css="input.button-1.checkout-as-guest-button")
 	WebElement guestCheckoutBtn ; 

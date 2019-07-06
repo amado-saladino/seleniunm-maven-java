@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ComparePage extends PageBase
 {
-
 	public ComparePage(WebDriver driver) {
 		super(driver);
 	}

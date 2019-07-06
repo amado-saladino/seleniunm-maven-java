@@ -26,7 +26,7 @@ public class AddProductToWishListTest extends TestBase
 	public void UserCanAddProductToWishlist() {
 		
 		productDetails.AddProductToWishlist();		
-		wishlistPage = new WishlistPage(driver); 
+		wishlistPage = new WishlistPage(driver);
 		Assert.assertTrue(wishlistPage.wishlistHeader.isDisplayed());
 		Assert.assertTrue(wishlistPage.productCell.getText().contains(productName));
 	}

@@ -7,7 +7,7 @@ import pages.HomePage;
 
 public class ProductHoverMenuTest extends TestBase
 {
-	HomePage homePage ; 
+	HomePage homePage; 
 	
 	@Test
 	public void UserCanSelectSubCategoryFromMainMenu() 

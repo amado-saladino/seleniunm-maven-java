@@ -20,16 +20,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PageBase {
 
 	protected WebDriver driver; 
-	protected JavascriptExecutor jse ; 
+	protected JavascriptExecutor jsRunner;
 	
-	public Actions action ;
+	public Actions action;
 
-	
 	public PageBase(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
-		jse = (JavascriptExecutor) driver;
+		jsRunner = (JavascriptExecutor) driver;
 		action = new Actions(driver);
 	}
 	
@@ -40,7 +39,7 @@ public class PageBase {
 	WebElement NotbooksMenu;
 	
 	@FindBy(id="customerCurrency")
-	public WebElement currencydrl;
+	public WebElement comboChangeCurrency;
 	
 	
 	public WebElement getElement(By selector)
@@ -59,8 +58,7 @@ public class PageBase {
 		
 	}
 	
-	
-	Boolean waitForPageLoad() {
+	protected Boolean waitForPageLoad() {
 		WebDriverWait wait = new WebDriverWait(driver, 15);
 		
 		ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
@@ -76,12 +74,10 @@ public class PageBase {
 		return wait.until(jsLoad);
 	}
 	
-	
 	void waitForElement(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 10); 
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	
 	
 	protected void clickButton(WebElement button) 
 	{
@@ -93,22 +89,17 @@ public class PageBase {
 		textElement.sendKeys(value);
 	}
 	
-	
-	protected void selectComboItemByText(WebElement comboElement, String textValue){
-		
+	protected void selectComboItemByText(WebElement comboElement, String textValue){		
 		new Select(comboElement).selectByVisibleText(textValue);		
 	}
 	
-	
-	public WebElement getComboSelectedItem(WebElement comboBox) {
-		
+	public WebElement getComboSelectedItem(WebElement comboBox) {		
 		return new Select(comboBox).getFirstSelectedOption();
 	}
 	
-	
 	protected void scrollToBottom()	
 	{
-		jse.executeScript("scrollTo(0, document.body.scrollHeight)");
+		jsRunner.executeScript("scrollTo(0, document.body.scrollHeight)");
 	}
 	
 	public void clearText(WebElement element) 
@@ -116,5 +107,4 @@ public class PageBase {
 		element.clear();
 	}
 	
-
 }

@@ -35,14 +35,12 @@ public class SearchPage extends PageBase
 		clickButton(productTitle);
 	}
 	
-	
 	public void OpenProductDetailsPage(String locator) 
 	{
 		WebElement productLink = getElement(By.linkText(locator)); 
 		clickButton(productLink);
 	}
 	
-
 	public void ProductSearchUsingAutoSuggest(String searchTxt) 
 	{
 		setTextElementText(searchTextBox, searchTxt);		

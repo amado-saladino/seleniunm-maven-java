@@ -38,7 +38,6 @@ public class ProductReviewPage extends PageBase
 	public void AddProductReview(String reviewTitle, String reviewMessage,int rate) {
 		setTextElementText(reviewTitleTxt, reviewTitle);
 		setTextElementText(reviewText, reviewMessage);
-		//clickButton(rating4RdoBtn);
 		selectRating(rate);
 		clickButton(submitReviewBtn);
 	}

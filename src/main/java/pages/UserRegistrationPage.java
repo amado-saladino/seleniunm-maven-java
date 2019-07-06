@@ -11,13 +11,13 @@ public class UserRegistrationPage extends PageBase
 	}
 	
 	@FindBy(id="gender-male")
-	WebElement genderRdoBtn ; 
+	WebElement radioMale; 
 	
 	@FindBy(id="FirstName")
-	WebElement fnTxtBox; 
+	WebElement textFirstname; 
 	
 	@FindBy(id="LastName")
-	WebElement lnTxtBox ;
+	WebElement textLastname;
 	
 	@FindBy(name="DateOfBirthDay")
 	WebElement SelectDay;
@@ -29,16 +29,16 @@ public class UserRegistrationPage extends PageBase
 	WebElement SelectYear;
 	
 	@FindBy(id="Email")
-	WebElement emailTxtBox ; 
+	WebElement textEmail; 
 	
 	@FindBy(id="Password")
-	WebElement passwordTxtBox ; 
+	WebElement textPassword; 
 	
 	@FindBy(id="ConfirmPassword")
-	WebElement confirmPasswordTxtBox ; 
+	WebElement textConfirmPassword; 
 	
 	@FindBy(id="register-button")
-	WebElement registerBtn ; 
+	WebElement buttonRegister; 
 	
 	@FindBy(css="div.result")
 	public WebElement successMessage;
@@ -53,23 +53,21 @@ public class UserRegistrationPage extends PageBase
 			, String email , String password
 			, String day, String month, String year) 
 	{
-		clickButton(genderRdoBtn);
-		setTextElementText(fnTxtBox, firstName);
-		setTextElementText(lnTxtBox, lastName);	
-		setTextElementText(emailTxtBox, email);
+		clickButton(radioMale);
+		setTextElementText(textFirstname, firstName);
+		setTextElementText(textLastname, lastName);	
+		setTextElementText(textEmail, email);
 		selectBirthDate(day, month, year);
-		setTextElementText(passwordTxtBox, password);
-		setTextElementText(confirmPasswordTxtBox, password);
-		clickButton(registerBtn);
+		setTextElementText(textPassword, password);
+		setTextElementText(textConfirmPassword, password);
+		clickButton(buttonRegister);
 	}
-	
 	
 	public void selectBirthDate(String day,String month,String year){
 		selectComboItemByText(SelectDay,day);
 		selectComboItemByText(SelectMonth, month);
 		selectComboItemByText(SelectYear, year);
 	}
-	
 	
 	public void userLogout() 
 	{

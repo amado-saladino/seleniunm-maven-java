@@ -34,7 +34,7 @@ public class GuestCheckoutProductFromCartTest extends TestBase {
 		productDetails.gotoShoppingCart();
 			
 		cartPage = new ShoppingCartPage(driver);
-		Assert.assertTrue(cartPage.totalLbl.getText().contains("3,600"));	
+		Assert.assertTrue(cartPage.labelTotal.getText().contains("3,600"));	
 	}
 
 	@Test(priority=3)

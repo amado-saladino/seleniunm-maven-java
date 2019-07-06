@@ -17,15 +17,7 @@ public class Faker {
 		fairy= Fairy.create();
 	}
 	
-	/*public static void main(String[] args) {
-		
-		Faker faker = new Faker();
-		faker.generateLocalDate();
-	
-	}*/
-	
-	public String getFullName(){
-		
+	public String getFullName(){		
 		return fairy.person(PersonProperties.male()).getFullName();
 	}
 	
@@ -33,14 +25,12 @@ public class Faker {
 		return fairy.person(PersonProperties.female()).getFirstName();
 	}
 	
-	public void generateLocalDate(){
-		
+	public void generateLocalDate(){		
 		localDate = fairy.person(PersonProperties.withAge(30)).getDateOfBirth().toLocalDate();
 		day = String.valueOf(localDate.getDayOfMonth() );
 		month = getMonthName(localDate.getMonthOfYear());
 		year = String.valueOf( localDate.getYear() );
 	}
-	
 	
 	 private String getMonthName(int monthNumber) {
 	        String month = "wrong";
@@ -51,7 +41,6 @@ public class Faker {
 	        }
 	        return month;
 	    }
-	
 	
 	public String getPassword(){
 		
@@ -106,7 +95,7 @@ public class Faker {
 
 	public String getDayOfMonth(){
 		return day;
-	} 
+	}
 	
 	public String getRandomMessage() {
 		

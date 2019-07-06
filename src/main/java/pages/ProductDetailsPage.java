@@ -14,13 +14,13 @@ public class ProductDetailsPage extends PageBase {
 	public WebElement productNamebreadCrumb;
 
 	@FindBy(css = "input.button-2.email-a-friend-button")
-	WebElement emailFriendBtn;
+	WebElement buttonEmailFriend;
 
 	@FindBy(css = "span.price-value-4")
-	public WebElement productPricelbl;
+	public WebElement labelProductPrice;
 
 	@FindBy(id = "add-to-wishlist-button-4")
-	WebElement addToWishlistBtn;
+	WebElement buttonAddToWishlist;
 
 	@FindBy(linkText = "Add your review")
 	WebElement addReviewLink;
@@ -32,12 +32,16 @@ public class ProductDetailsPage extends PageBase {
 	WebElement addToCartBtn;
 
 	public String getSelectedCurrency() {
-
-		return getComboSelectedItem(currencydrl).getText();
+		return getComboSelectedItem(comboChangeCurrency).getText();
 	}
 
+	public boolean isAtProductPage(String productName) {
+		return productNamebreadCrumb.isDisplayed() &&
+		productNamebreadCrumb.getText().equals(productName);
+	} 
+
 	public void openSendEmail() {
-		clickButton(emailFriendBtn);
+		clickButton(buttonEmailFriend);
 	}
 
 	public void openAddReviewPage() {
@@ -45,7 +49,7 @@ public class ProductDetailsPage extends PageBase {
 	}
 
 	public void AddProductToWishlist() {
-		clickButton(addToWishlistBtn);
+		clickButton(buttonAddToWishlist);
 		WebElement element = getElement(By.linkText("wishlist"));		
 		clickButton(element);
 	}

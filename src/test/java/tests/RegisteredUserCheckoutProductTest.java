@@ -32,7 +32,7 @@ public class RegisteredUserCheckoutProductTest extends TestBase
 	{
 		randomEmail = "any_random_mail" + Helper.generateRandomNumber() + "@server.com";
 		
-		homePage = new HomePage(driver); 
+		homePage = new HomePage(driver);
 		homePage.openRegistrationPage();
 		registerPage = new UserRegistrationPage(driver); 
 		registerPage.userRegistration(firstName, lastName, randomEmail, password, day, month, year);
@@ -58,10 +58,9 @@ public class RegisteredUserCheckoutProductTest extends TestBase
 	public void UserCanAddProductToShoppingCart() {
 		detailsPage = new ProductDetailsPage(driver);
 		detailsPage.AddToCart();
-		detailsPage.gotoShoppingCart();
-		
+		detailsPage.gotoShoppingCart();		
 		shoppingCartPage = new ShoppingCartPage(driver);
-		Assert.assertTrue(shoppingCartPage.totalLbl.getText().contains("3,600"));
+		Assert.assertTrue(shoppingCartPage.labelTotal.getText().contains("3,600"));
 	}
 
 	@Test(priority=4)

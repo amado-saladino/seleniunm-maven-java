@@ -17,14 +17,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageBase {
+public class Page {
 
 	protected WebDriver driver; 
 	protected JavascriptExecutor jsRunner;
 	
 	public Actions action;
 
-	public PageBase(WebDriver driver) 
+	public Page(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 		this.driver = driver;

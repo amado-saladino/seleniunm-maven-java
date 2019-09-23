@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class EmailPage extends PageBase{
+public class EmailPage extends Page{
 
 	public EmailPage(WebDriver driver) {
 		super(driver);

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class UserRegistrationPage extends PageBase 
+public class UserRegistrationPage extends Page 
 {
 	public UserRegistrationPage(WebDriver driver) {
 		super(driver);
